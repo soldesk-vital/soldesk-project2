@@ -1,14 +1,15 @@
-# 파이썬 공식 이미지 사용 (3.11 버전)
-FROM python:3.11-slim-buster
+# 파이썬 공식 이미지 사용 (3.11 버전) - 최신 안정 버전
+FROM python:3.11-slim
 
 # 작업 디렉토리 설정
 WORKDIR /app
 
 # 필요한 패키지 설치 및 캐시 정리
 # build-essential은 pip install 과정에서 필요한 컴파일러 등을 제공합니다.
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    #build-essential \
-    && rm -rf /var/lib/apt/lists/*
+# 패키지 설치가 필요하지 않다면 아래 부분을 주석 처리
+# RUN apt-get update && apt-get install -y --no-install-recommends \
+#     #build-essential \
+#     && rm -rf /var/lib/apt/lists/*
 
 # 파이썬 의존성 파일 복사 및 설치
 COPY requirements.txt .
