@@ -6,7 +6,7 @@ import logging
 from solapi.services.message_service import SolapiMessageService
 from solapi.model.request.message import Message
 
-# 로깅 설정
+# 로깅 설정.
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 )
